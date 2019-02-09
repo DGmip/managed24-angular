@@ -4,7 +4,7 @@ import { HomeComponent } from './comps/pages/home/home.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'names', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ]
 
 @NgModule({

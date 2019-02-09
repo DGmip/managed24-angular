@@ -22,8 +22,10 @@ export class HomeComponent implements OnInit {
   getNames(): void {
     this.namesService.getNames()
       .subscribe((names: Name[]) => {
-        console.log('names', names)
+        console.log('got names in component', names)
         this.names = names
+      }, (error) => {
+        console.error('errored in component', error.error)
       })
   }
 

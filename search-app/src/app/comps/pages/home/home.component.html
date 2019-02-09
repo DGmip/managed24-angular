@@ -1,13 +1,12 @@
 <div class="page">
   <div id="search-bar" fxLayout="row" fxLayoutAlign="start center">
-    <input type="text" [(ngModel)]="searchTerm" />
-    <button mat-button mat-icon-button class='default' (click)="search()">
-      <i class="material-icons light-grey">search</i>
-    </button>
+    <mat-form-field>
+      <input matInput placeholder="Search" value="" [(ngModel)]="searchTerm">
+    </mat-form-field>
   </div>
 
   <div id="names" fxLayout="column" fxLayoutAlign="start center">
-    <div class="name" (click)="remove(n)" *ngFor="let n of names | filterByName: searchTerm">
+    <div class="name" (click)="removeName(n)" *ngFor="let n of names | filterByName: searchTerm">
       {{n.name}}
     </div>
   </div>

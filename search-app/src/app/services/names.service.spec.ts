@@ -1,12 +1,50 @@
-import { TestBed } from '@angular/core/testing'
-
+import { TestBed, inject, getTestBed } from '@angular/core/testing'
+import { Observable } from 'rxjs/internal/Observable'
+import { of } from 'rxjs'
+import { asyncData, asyncError } from '../helpers/async-observable-helpers'
+import { HttpClient, HttpErrorResponse } from '@angular/common/http'
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing'
+import { Name } from '../interfaces/name'
 import { NamesService } from './names.service'
+import { environment } from '../../environments/environment'
+
+const endpoint = environment.endpoint
 
 describe('NamesService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}))
+  let service: NamesService
+  let httpClientSpy: { get: jasmine.Spy }
 
-  it('should be created', () => {
-    const service: NamesService = TestBed.get(NamesService)
-    expect(service).toBeTruthy()
+  beforeEach(() => {
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get'])
+    service = new NamesService(<any>httpClientSpy)
   })
+
+
+  it('should return expected names:Name[] (HttpClient called once)', () => {
+    const expectedNames: Name[] = names
+
+    httpClientSpy.get.and.returnValue(asyncData(expectedNames))
+
+    service.getNames().subscribe(
+      data => expect(data).toEqual(expectedNames, 'expected names'),
+      fail
+    )
+    expect(httpClientSpy.get.calls.count()).toBe(1, 'one call')
+  })
+
+  it('should return an error when the server returns a 404', () => {
+    const errorResponse = new HttpErrorResponse({
+      error: 'test 404 error',
+      status: 404, statusText: 'Not Found'
+    })
+
+    httpClientSpy.get.and.returnValue(asyncError(errorResponse))
+
+  })
+
 })
+
+const names: Name[] = [
+  { _id: '5c5e872caa69ef4be123ed10', name: 'Paula Gowinaoeu' },
+  { _id: '5c5e872caa69ef4be123ed11', name: 'Lemuel Crown' },
+]
