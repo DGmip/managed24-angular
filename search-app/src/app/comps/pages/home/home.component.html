@@ -1,3 +1,14 @@
-<p>
-  home works!
-</p>
+<div class="page">
+  <div id="search-bar" fxLayout="row" fxLayoutAlign="start center">
+    <input type="text" [(ngModel)]="searchTerm" />
+    <button mat-button mat-icon-button class='default' (click)="search()">
+      <i class="material-icons light-grey">search</i>
+    </button>
+  </div>
+
+  <div id="names" fxLayout="column" fxLayoutAlign="start center">
+    <div class="name" (click)="remove(n)" *ngFor="let n of names | filterByName: searchTerm">
+      {{n.name}}
+    </div>
+  </div>
+</div>
