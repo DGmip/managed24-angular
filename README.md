@@ -1,11 +1,11 @@
 # Managed 24/7 Technical Test
 
-A Dockerised ExpressJS restful API to query MongoDB
+An Angular 6 App to consume part one of the test
 
-# Test Brief 
+## Test Brief 
 
-## Part 1 - Node / Express / MongoDB:
+### Part 2 - Angular
 
-Create a node.js restful API with a single endpoint that given a search term returns a list of names that begin with that term. The query will be done against MongoDB.
-The endpoint must be secured.
-# managed24-angular
+Create an angular 2+ application that uses the node.js application you just created
+to list names. The application will also have a search box that will filter out the list
+based on the search.
