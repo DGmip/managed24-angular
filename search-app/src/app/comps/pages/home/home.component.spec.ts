@@ -1,7 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { HttpClientModule } from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material'
 
 import { HomeComponent } from './home.component'
 import { FilterByNamePipe } from '../../../src/pipes/filter-by-name.pipe'
@@ -15,6 +18,9 @@ describe('HomeComponent', () => {
       imports: [
         FormsModule,
         HttpClientModule,
+        MatFormFieldModule,
+        MatInputModule,
+        BrowserAnimationsModule,
       ],
       declarations: [
         HomeComponent,
