@@ -1,4 +1,8 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DGmip/managed24-angular"
+  },
   "name": "managed-rest",
   "version": "1.0.0",
   "description": "A restful API with a single endpoint that given a search term returns a list of names that begin with that term",
