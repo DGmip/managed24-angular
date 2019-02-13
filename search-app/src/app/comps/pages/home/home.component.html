@@ -6,7 +6,7 @@
     </mat-form-field>
   </div>
 
-  <div id="names" fxLayout="column" fxLayoutAlign="start center">
+  <div id="names" fxLayout="row wrap" fxLayoutAlign="start center">
     <div class="name" (click)="removeName(n)" *ngFor="let n of names | filterByName: searchTerm">
       {{n.name}}
     </div>

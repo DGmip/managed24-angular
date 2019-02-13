@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { Name } from '../../interfaces/name'
+import { Name } from '../interfaces/name'
 
 @Pipe({
   name: 'filterByName'

@@ -1,0 +1,120 @@
+@import 'colours'
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+// @import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber"
+html, body
+  margin: 0px
+  padding: 0px
+  height: 100%
+i.material-icons, i.material-icons a, i.material-icons span
+  color: $material-icon-grey
+
+h1, h2, h3, h4, h5, h6
+  color: $text-black
+.warn, .warning
+  color: $warning
+.error
+  color: $youtube
+p.error
+  margin: 0px
+a
+  cursor: pointer
+
+i.material-icons.success
+  color: $success
+i.material-icons.ready
+  color: $success
+i.material-icons.error, i.material-icons.fail
+  color: $youtube
+i.material-icons.loading
+  color: $light-grey
+i.material-icons.white
+  color: white
+a
+  &:hover
+    text-decoration: underline
+h1, h2, h3, h4, h5, h6, p
+  color: $text-black
+  text-align: center
+  .center
+    text-align: center
+h1, h2, h3, h4, h5, h6
+  &.success
+    color: $success
+  &.title
+    text-align: center
+textarea
+  border: 1px solid $grey3
+
+div.tooltip, div.icon-row
+  h1, h2, h3, h4, h5, h6
+    margin: 0px
+    padding: 0px
+  i.material-icons
+    margin-left: 3px
+    cursor: pointer
+
+.mat-tooltip
+  background-color: $lolly
+  font-size: 1em
+
+.mat-progress-spinner
+  circle
+    stroke: $lolly
+
+#spinner
+  width: 100%
+  min-height: 100%
+
+i.material-icons.favourite
+  &.favourited
+    color: $favorite
+.mat-divider
+  width: 100%
+  border-top: 4px solid $lolly !important
+.mat-divider.list
+  border-top: 1px solid darken($lolly, 5%) !important
+
+.page
+  padding: 15px
+  .border
+    border: 1px solid $grey3
+    margin-bottom: 10px
+    width: 100%
+    padding: 15px
+  #header
+    margin-bottom: 15px
+    h2
+      font-size: 1.7em
+    i.material-icons
+      font-size: 32px
+      &.favourited
+        color: $favorite
+  h2.section-title
+    margin-top: 10px
+    margin-bottom: 10px
+
+.mat-dialog-container
+  max-width: 100vw !important;
+  margin: 0px !important
+  padding: 0px !important
+
+.full-screen-overlay
+  min-height: 100%
+  min-width: 100%
+.overlay
+  border-bottom: 3px solid $lolly
+  border-top: 3px solid $lolly
+  h3.title
+    margin-top: 20px
+  h1, h2, h3, h4, h5, h6
+    text-align: center
+  button[mat-button]
+    margin: 15px
+button.mat-button.black
+  span
+    color: $text-black
+button.mat-button.white
+  span
+    color: white

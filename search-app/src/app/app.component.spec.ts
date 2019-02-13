@@ -1,6 +1,10 @@
 import { TestBed, async } from '@angular/core/testing'
+import { Component } from '@angular/core'
 import { RouterTestingModule } from '@angular/router/testing'
 import { AppComponent } from './app.component'
+
+@Component({selector: 'app-sidenav', template: ''})
+class SidenavComponent {}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +13,8 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        SidenavComponent
       ],
     }).compileComponents()
   }))
