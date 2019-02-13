@@ -1,0 +1,8 @@
+<div id="search-bar" fxLayout="column" fxLayoutAlign="center center">
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Search" value="" [formControl]="searchTerm" autocomplete='off' type='search'>
+    </mat-form-field>
+  </form>
+  {{results | json}}
+</div>

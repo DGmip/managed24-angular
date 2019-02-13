@@ -1,14 +1,14 @@
 <div class="page">
   <h1 class="title">Searchable list of names</h1>
 
-  <div id="search-bar" fxLayout="column" fxLayoutAlign="center center">
-    <mat-form-field>
-      <input matInput placeholder="Search" value="" [(ngModel)]="searchTerm" autocomplete='off'>
-    </mat-form-field>
-  </div>
+  <app-names-autocomplete (namesEmitter)='setNames($event)'></app-names-autocomplete>
 
   <div id="names" fxLayout="row wrap" fxLayoutAlign="center center">
-    <div class="name" (click)="removeName(n)" *ngFor="let n of names | filterByName: searchTerm">
+    <!-- old search filter pipe -->
+    <!-- <div class="name" (click)="removeName(n)" *ngFor="let n of names | filterByName: searchTerm"> -->
+    <!--   {{n.name}} -->
+    <!-- </div> -->
+    <div class="name" (click)="removeName(n)" *ngFor="let n of names">
       {{n.name}}
     </div>
   </div>

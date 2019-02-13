@@ -26,7 +26,7 @@ describe('NamesService', () => {
 
     httpClientSpy.get.and.returnValue(asyncData(expectedNames))
 
-    service.getNames().subscribe(
+    service.getNames('milly').subscribe(
       data => expect(data).toEqual(expectedNames, 'expected names'),
       fail
     )

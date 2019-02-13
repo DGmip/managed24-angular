@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs/internal/Observable'
+import { Subject } from 'rxjs'
 import { NamesService } from '../../../services/names.service'
 import { Name } from '../../../interfaces/name'
 
@@ -8,33 +10,17 @@ import { Name } from '../../../interfaces/name'
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
-  names: Name[]
-  searchTerm: string
 
-  constructor(
-    private namesService: NamesService,
-  ) {
+  names: Name[]
+
+  constructor() { }
+
+  setNames(names: any): void {
+    console.log('setting names', names)
+    this.names = names
   }
 
   ngOnInit() {
-    this.getNames()
-  }
-
-  // get all the names from the db
-  getNames(): void {
-    this.namesService.getNames()
-      .subscribe((names: Name[]) => {
-        // console.log('got names in component', names)
-        this.names = names
-      }, (error) => {
-        // console.error('errored in component', error.error)
-      })
-  }
-
-  // remove name function for future dev
-  removeName(n: Name): void {
-    const id = n._id
-    // console.log('todo: removing by name', id)
   }
 
 }
