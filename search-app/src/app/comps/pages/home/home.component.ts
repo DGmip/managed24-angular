@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     this.getNames()
   }
 
+  // get all the names from the db
   getNames(): void {
     this.namesService.getNames()
       .subscribe((names: Name[]) => {
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
       })
   }
 
+  // remove name function for future dev
   removeName(n: Name): void {
     const id = n._id
     console.log('removing by name', id)
