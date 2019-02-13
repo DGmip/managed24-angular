@@ -21,7 +21,7 @@ based on the search.
   Because I wanted to use Docker it was neccessary that the dist folder is served using ExpressJS.
   The intended way to run this app is by running ```docker-compose up``` from the nodejs-api repo, but failing that, you can run ```docker run -p 4200:8080 gcr.io/avian-pact-231312/angular```, after running ```docker pull 
 gcr.io/avian-pact-231312/angular:latest``` to get the image.
-  Alternatively, 
+  Alternatively, you can run 
   ```
   ng build --prod
   docker build -t angular .
