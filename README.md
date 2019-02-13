@@ -34,6 +34,7 @@ gcr.io/avian-pact-231312/angular:latest``` to get the image.
 ## Testing
   from the search-app directory
   ```ng test```
+
   ```ng e2e```
 
 ## Linting
