@@ -36,6 +36,9 @@ gcr.io/avian-pact-231312/angular:latest``` to get the image.
   ```ng test```
   ```ng e2e```
 
+## Linting
+  ```npm run lint``` from the search-app folder
+
 ### Mistakes made:
 
 - Bunched several commits together into one as I was initially just experimenting with Docker
