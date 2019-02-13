@@ -31,6 +31,11 @@ gcr.io/avian-pact-231312/angular:latest``` to get the image.
 ## Development server
   As long as the nodejs-api is running on port 4000, you can use ```ng serve``` from the search-app directory.
 
+## Testing
+  from the search-app directory
+  ```ng test```
+  ```ng e2e```
+
 ### Mistakes made:
 
 - Bunched several commits together into one as I was initially just experimenting with Docker
@@ -45,4 +50,4 @@ gcr.io/avian-pact-231312/angular:latest``` to get the image.
 
 ### What I would do if I had more time
   - Integrate CI with Github/lab
-  - e2e testing
+  - Test routing with e2e
