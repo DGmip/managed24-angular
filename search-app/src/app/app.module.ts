@@ -9,13 +9,17 @@ import { environment } from '../environments/environment'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './modules/material/material.module'
 import { FilterByNamePipe } from './src/pipes/filter-by-name.pipe'
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { SidenavComponent } from './comps/sidenav/sidenav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FilterByNamePipe,
+    SidenavComponent,
   ],
   imports: [
     FormsModule,
@@ -24,7 +28,13 @@ import { FormsModule } from '@angular/forms'
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

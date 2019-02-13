@@ -24,17 +24,17 @@ export class HomeComponent implements OnInit {
   getNames(): void {
     this.namesService.getNames()
       .subscribe((names: Name[]) => {
-        console.log('got names in component', names)
+        // console.log('got names in component', names)
         this.names = names
       }, (error) => {
-        console.error('errored in component', error.error)
+        // console.error('errored in component', error.error)
       })
   }
 
   // remove name function for future dev
   removeName(n: Name): void {
     const id = n._id
-    console.log('todo: removing by name', id)
+    // console.log('todo: removing by name', id)
   }
 
 }
