@@ -1,6 +1,6 @@
 import { FilterByNamePipe } from './filter-by-name.pipe'
-import { names } from '../../helpers/test-names'
-import { Name } from '../../interfaces/name'
+import { names } from '../helpers/test-names'
+import { Name } from '../interfaces/name'
 
 describe('FilterByNamePipe', () => {
   const testNames: Name[] = names

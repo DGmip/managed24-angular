@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material'
 
 import { HomeComponent } from './home.component'
-import { FilterByNamePipe } from '../../../src/pipes/filter-by-name.pipe'
+import { FilterByNamePipe } from '../../../pipes/filter-by-name.pipe'
 
 describe('HomeComponent', () => {
   let component: HomeComponent
