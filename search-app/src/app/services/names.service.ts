@@ -23,9 +23,11 @@ export class NamesService {
     if (!searchTerm) {
       return of({ message: 'You need to pass a searchTerm to this function' })
     }
+
     const url = `${ endpoint }/names?apiKey=${ apiKey }&search=${ searchTerm }`
-    console.log('getting names in service', url)
-    return this.http.get<Name[]>(url)
+    const formatedURL = encodeURI(url)
+    console.log('getting names in service', formatedURL)
+    return this.http.get<Name[]>(formatedURL)
       .pipe(
         catchError(handleHttpError)
       )

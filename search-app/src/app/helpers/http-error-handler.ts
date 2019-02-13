@@ -3,8 +3,9 @@ import { Error } from '../interfaces/error'
 import { throwError } from 'rxjs'
 
 export function handleHttpError(error: HttpErrorResponse) {
-  console.log('an error in error handler', error)
+  // console.log('an error in error handler', error)
   let err: Error
+
   if (error instanceof HttpErrorResponse) {
     switch (error.status) {
       case 404:
@@ -59,5 +60,6 @@ export function handleHttpError(error: HttpErrorResponse) {
   }
 
   // return an observable with a user-facing error message
-  return throwError({ message: 'default error' })
+  err = { message: 'default error ()', status: 500 }
+  return throwError(err)
 }
