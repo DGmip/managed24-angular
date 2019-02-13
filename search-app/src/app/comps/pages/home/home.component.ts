@@ -34,9 +34,7 @@ export class HomeComponent implements OnInit {
   // remove name function for future dev
   removeName(n: Name): void {
     const id = n._id
-    console.log('removing by name', id)
+    console.log('todo: removing by name', id)
   }
 
-  search(): void {
-  }
 }
