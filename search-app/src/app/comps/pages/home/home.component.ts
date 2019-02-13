@@ -10,6 +10,7 @@ import { Name } from '../../../interfaces/name'
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  title: string = 'Searchable list of names'
 
   names: Name[]
 

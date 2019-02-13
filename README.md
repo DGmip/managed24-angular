@@ -17,7 +17,7 @@ based on the search.
   - @angular/pwa
   - ExpressJS server
 
-# Docker 
+## Docker 
   Because I wanted to use Docker it was neccessary that the dist folder is served using ExpressJS.
   The intended way to run this app is by running ```docker-compose up``` from the nodejs-api repo, but failing that, you can run ```docker run -p 4200:8080 gcr.io/avian-pact-231312/angular```, after running ```docker pull 
 gcr.io/avian-pact-231312/angular:latest``` to get the image.
@@ -28,23 +28,21 @@ gcr.io/avian-pact-231312/angular:latest``` to get the image.
   docker run -p 4200:8080 angular
   ```
 
+## Development server
+  As long as the nodejs-api is running on port 4000, you can use ```ng serve``` from the search-app directory.
+
 ### Mistakes made:
 
 - Bunched several commits together into one as I was initially just experimenting with Docker
 - Initially wrote a FilterByName angular pipe on all of the names instead of querying the database
 
 ### Semicolons!
-  https://medium.com/@eugenkiss/dont-use-semicolons-in-typescript-474ccfe4bdb3
+  You might notice I don't use semi-colons in my typescript atm, [this article can shed a bit of light as to why.](https://medium.com/@eugenkiss/dont-use-semicolons-in-typescript-474ccfe4bdb3)
 
 ### Project goals
   Dockerised hosted on  with expressjs for the production build of the angular frontend
   Dockerised expressjs api
 
 ### What I would do if I had more time
-  Debounce the search input, maybe
-  Dockerise a Debian 9 mongod and complete the triad without relying on Atlas
-  Buy a Mac and Use Kubernetes, just kidding
-  add all 3 to google container registry
-  make a GKE cluster
-  make the connection to the db persistent / protect from failure
-
+  - Integrate CI with Github/lab
+  - e2e testing
