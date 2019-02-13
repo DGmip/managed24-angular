@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
+import { of } from 'rxjs'
+import { ActivatedRoute, Params, Router } from '@angular/router'
 import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
@@ -12,6 +14,7 @@ import { FilterByNamePipe } from '../../../src/pipes/filter-by-name.pipe'
 describe('HomeComponent', () => {
   let component: HomeComponent
   let fixture: ComponentFixture<HomeComponent>
+
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

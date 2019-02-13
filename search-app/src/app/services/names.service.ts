@@ -22,9 +22,9 @@ export class NamesService {
     const url = endpoint + '/names'
     console.log('getting names in service', url)
     return this.http.get<Name[]>(url)
-      // .pipe(
-      //   catchError(handelHttpError)
-      // )
+      .pipe(
+        catchError(handelHttpError)
+      )
   }
 
 }

@@ -7,6 +7,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { Name } from '../interfaces/name'
 import { NamesService } from './names.service'
 import { environment } from '../../environments/environment'
+import { names } from '../helpers/test-names'
 
 const endpoint = environment.endpoint
 
@@ -43,8 +44,3 @@ describe('NamesService', () => {
   })
 
 })
-
-const names: Name[] = [
-  { _id: '5c5e872caa69ef4be123ed10', name: 'Paula Gowinaoeu' },
-  { _id: '5c5e872caa69ef4be123ed11', name: 'Lemuel Crown' },
-]

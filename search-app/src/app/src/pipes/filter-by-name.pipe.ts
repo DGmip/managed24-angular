@@ -11,9 +11,10 @@ export class FilterByNamePipe implements PipeTransform {
     console.log('searchstring', searchString)
     if (names && searchString) {
       const filtered = names.filter((name: Name) => {
+        // allow the user to search for names with or without capitals
         const lowercaseName = name.name.toLowerCase()
-        console.log('lowercas name', lowercaseName)
-        return lowercaseName.includes(searchString)
+        console.log('lowercase name', lowercaseName)
+        return lowercaseName.includes(searchString) || name.name.includes(searchString)
       })
       return filtered
     }
