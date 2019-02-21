@@ -20,6 +20,7 @@ export class NamesService {
   ) { }
 
   getNames(searchTerm: string): Observable<any> {
+
     if (!searchTerm) {
       return of({ message: 'You need to pass a searchTerm to this function' })
     }
@@ -27,6 +28,7 @@ export class NamesService {
     const url = `${ endpoint }/names?apiKey=${ apiKey }&search=${ searchTerm }`
     const formatedURL = encodeURI(url)
     console.log('getting names in service', formatedURL)
+
     return this.http.get<Name[]>(formatedURL)
       .pipe(
         catchError(handleHttpError)

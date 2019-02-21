@@ -58,7 +58,7 @@ describe('NamesService', () => {
       .subscribe(
         data => fail('Should have errored with 404'),
         error => {
-          console.log('FUCKING ERROR', error)
+          console.log('oops, sorry', error)
         }
       )
   })
